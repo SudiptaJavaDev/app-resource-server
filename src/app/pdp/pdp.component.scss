@@ -1,0 +1,103 @@
+.pdp-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pdp-header {
+  margin-bottom: 20px;
+}
+
+.pdp-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pdp-header p {
+  font-size: 16px;
+  color: #666;
+}
+
+.pdp-image {
+  margin-bottom: 20px;
+}
+
+.pdp-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.pdp-details {
+  margin-bottom: 20px;
+}
+
+.pdp-details p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.pdp-actions {
+  margin-bottom: 20px;
+}
+
+.pdp-actions button {
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #ddd;
+  color: #666;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.back-to-shop-btn {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-shop-btn:hover {
+  background-color: #3e8e41;
+}
+
+.back-to-shop-btn:active {
+  background-color: #2e6d31;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-group .btn-primary {
+  margin-right: 10px;
+}
+
+.button-group .back-to-shop-btn {
+  margin-left: 10px;
+}

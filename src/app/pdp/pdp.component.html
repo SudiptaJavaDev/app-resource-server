@@ -1,0 +1,19 @@
+<div class="pdp-container">
+  <div class="pdp-header">
+    <h1>{{product.title}}</h1>
+    <p>{{product.description}}</p>
+  </div>
+  <div class="pdp-image">
+    <img [src]="'./assets/images/products/' + product.imageUrl" alt="{{product.title}}" >
+  </div>
+  <div class="pdp-details">
+    <p>Price: {{product.unitPrice | currency}}</p>
+    <p>Brand: {{product.brandName}}</p>
+    <p>Category: {{product.categoryName}}</p>
+  </div>
+  <div class="pdp-actions button-group">
+    <button class="btn btn-primary" (click)="addItemToCart()">Add to Cart</button>
+    <a href="/shop" class="primary-btn back-to-shop-btn">Back to Shop</a>
+  </div>
+
+</div>
