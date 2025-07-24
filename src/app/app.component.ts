@@ -13,11 +13,7 @@ import { AboutComponent } from './about/about.component';
   imports: [
             CommonModule, 
             RouterOutlet, 
-            NavBarComponent, 
-            ShopComponent, 
-            HomeComponent,
-            AppComponent,
-            AboutComponent
+            NavBarComponent
           ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

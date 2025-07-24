@@ -12,16 +12,19 @@ export const routes: Routes = [
         path: 'shop',
         loadChildren: () => import('./shop/shop.routes').then(r => r.SHOP_ROUTES)
     },
-      /*  { 
-        path: 'cart', 
-        loadComponent: () => import('./cart/cart.component').then(c => c.CartComponent)
-      },   */
-      {
-        path: 'cart', loadChildren: () => import('./cart/cart.routes').then(r=>r.CART_ROUTES)
-      },
-     // { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
-      {
-        path: 'product', children: PDP_ROUTES
-      },
-    
+      
+    {
+      path: 'cart', loadChildren: () => import('./cart/cart.routes').then(r=>r.CART_ROUTES)
+    },
+
+    {
+      path: 'checkout', loadChildren: () => import('./checkout/checkout.routes').then(r=>r.CHECKOUT_ROUTES ),
+
+
+    },
+  
+    {
+      path: 'product', children: PDP_ROUTES
+    },
+
   ];

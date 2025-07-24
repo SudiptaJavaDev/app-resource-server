@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ICart } from 'src/app/shared/model/cart';
 import { CartService } from 'src/app/cart/cart.service';
 import { RouterModule } from '@angular/router';
+import { KeycloakProfile } from 'keycloak-js';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,11 +14,43 @@ import { RouterModule } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
 
     cart$  : Observable<ICart|null>;
-  constructor(public cartService: CartService){
+    public loggedIn = false;
+    public userProfile : KeycloakProfile | null = null;
+   constructor(public cartService: CartService, private keycloak: KeycloakService)
+  {
     this.cart$= this.cartService.cart$;
   }
+  ngOnInit(): void {
+      this.isLogged();
+  }
+  async isLogged() {
+    this.loggedIn = await this.keycloak.isLoggedIn();
+    console.log("LoggedIn?");
+    console.log(this.loggedIn);
+    if(this.loggedIn) {
+      this.userProfile = await this.keycloak.loadUserProfile();
+      console.log(this.userProfile);
+
+    }
+
+  }
+  public login() {
+      this.keycloak.login();
+   }
+
+    public logout() {
+      this.keycloak.logout();
+    }
+
+    get username() {
+      return this.userProfile?.username;
+    }
+
+    get email() {
+      return this.userProfile?.email;
+    }
    
 }
